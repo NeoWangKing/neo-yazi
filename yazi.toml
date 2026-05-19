@@ -1,0 +1,34 @@
+# yazi.toml
+[mgr]
+show_hidden = true
+ratio = [1, 4, 3]
+sort_by = "natural"
+sort_dir_first = true
+linemode = "size_and_mtime"
+show_symlink = true
+scrolloff = 10
+
+[preview]
+wrap = "no"
+
+[opener]
+edit = [ { run = 'nvim %s', block = true } ]
+pdf = [ { run = 'open -a skim %s', orphan = true } ]
+img = [ { run = 'open %s', orphan = true } ]
+open = [ { run = 'open %s1', orphan = true } ]
+
+[open]
+prepend_rules = [
+  { url = "*.pdf", use = "pdf" },
+  { url = "*.png", use = "img" },
+  { url = "*.jpg", use = "img" },
+  { url = "*.jpeg", use = "img" },
+  { url = "*.gif", use = "img" },
+  { url = "*.bmp", use = "img" },
+  { url = "*.webp", use = "img" },
+  { url = "*.svg", use = "img" },
+  { url = "*.tiff", use = "img" },
+  { url = "*.ico", use = "img" },
+  { url = "*.heic", use = "img" },
+  { url = "*.avif", use = "img" },
+]
