@@ -4,7 +4,7 @@ show_hidden = true
 ratio = [1, 4, 3]
 sort_by = "natural"
 sort_dir_first = true
-linemode = "size_and_mtime"
+linemode = "size"
 show_symlink = true
 scrolloff = 10
 
@@ -14,21 +14,37 @@ wrap = "no"
 [opener]
 edit = [ { run = 'nvim %s', block = true } ]
 pdf = [ { run = 'open -a skim %s', orphan = true } ]
+# pdf = [ { run = 'evince %s', orphan = true } ]
 img = [ { run = 'open %s', orphan = true } ]
+# img = [ { run = 'feh %s', orphan = true } ]
 open = [ { run = 'open %s1', orphan = true } ]
+# open = [ { run = 'vlc %s1', orphan = true } ]
 
 [open]
 prepend_rules = [
-  { url = "*.pdf", use = "pdf" },
-  { url = "*.png", use = "img" },
-  { url = "*.jpg", use = "img" },
-  { url = "*.jpeg", use = "img" },
-  { url = "*.gif", use = "img" },
-  { url = "*.bmp", use = "img" },
-  { url = "*.webp", use = "img" },
-  { url = "*.svg", use = "img" },
-  { url = "*.tiff", use = "img" },
-  { url = "*.ico", use = "img" },
-  { url = "*.heic", use = "img" },
-  { url = "*.avif", use = "img" },
-]
+{ url = "*.pdf",  use = "pdf" },
+{ url = "*.png",  use = "img" },
+{ url = "*.jpg",  use = "img" },
+{ url = "*.jpeg", use = "img" },
+{ url = "*.gif",  use = "img" },
+{ url = "*.bmp",  use = "img" },
+{ url = "*.webp", use = "img" },
+{ url = "*.svg",  use = "img" },
+{ url = "*.tiff", use = "img" },
+{ url = "*.ico",  use = "img" },
+{ url = "*.heic", use = "img" },
+{ url = "*.avif", use = "img" },
+# 视频文件扩展名匹配
+{ url = "*.mp4",  use = "video" },
+{ url = "*.mkv",  use = "video" },
+{ url = "*.avi",  use = "video" },
+{ url = "*.mov",  use = "video" },
+{ url = "*.flv",  use = "video" },
+{ url = "*.webm", use = "video" },
+{ url = "*.m4v",  use = "video" },
+{ url = "*.mpg",  use = "video" },
+{ url = "*.mpeg", use = "video" },
+{ url = "*.wmv",  use = "video" },
+{ url = "*.3gp",  use = "video" },
+	]
+
