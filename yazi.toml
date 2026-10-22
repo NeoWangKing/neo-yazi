@@ -12,13 +12,22 @@ scrolloff = 10
 wrap = "no"
 
 [opener]
-edit = [ { run = 'nvim %s', block = true } ]
-pdf = [ { run = 'open -a skim %s', orphan = true } ]
-# pdf = [ { run = 'evince %s', orphan = true } ]
-img = [ { run = 'open %s', orphan = true } ]
-# img = [ { run = 'feh %s', orphan = true } ]
-open = [ { run = 'open %s1', orphan = true } ]
-# open = [ { run = 'vlc %s1', orphan = true } ]
+edit = [{ run = 'nvim %s', block = true, desc = "编辑" }]
+
+pdf = [
+    { run = 'evince %s',      orphan = true, for = "linux", desc = "Evince" },
+    { run = 'open -a Skim %s', orphan = true, for = "macos", desc = "Skim" },
+]
+
+img = [
+    { run = 'feh %s', orphan = true, for = "linux", desc = "feh" },
+    { run = 'open %s', orphan = true, for = "macos", desc = "Preview" },
+]
+
+video = [
+    { run = 'vlc %s',          orphan = true, for = "linux", desc = "VLC" },
+    { run = 'open -a VLC %s',  orphan = true, for = "macos", desc = "VLC" },
+]
 
 [open]
 prepend_rules = [
